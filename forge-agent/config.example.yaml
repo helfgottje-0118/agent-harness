@@ -1,0 +1,22 @@
+provider:
+  name: openai_compatible
+  base_url: http://127.0.0.1:11434/v1
+  api_key: ollama
+  model: qwen3.5:latest
+
+agent:
+  max_tool_rounds: 12
+  system_prompt: >
+    You are FORGE, an autonomous AI agent.
+    Use tools to complete work rather than merely describing commands.
+
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+
+platform_toolsets:
+  forge-cli:
+    - terminal
+    - file
+    - memory
